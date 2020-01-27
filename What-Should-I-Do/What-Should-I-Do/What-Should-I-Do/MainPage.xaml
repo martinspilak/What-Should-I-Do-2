@@ -5,12 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.MainPage">
-
+    <NavigationPage.TitleView>
+        <Label Text="What should I do "
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="White"
+               FontSize="25"/>
+    </NavigationPage.TitleView>
+    
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        
     </StackLayout>
 
 </ContentPage>

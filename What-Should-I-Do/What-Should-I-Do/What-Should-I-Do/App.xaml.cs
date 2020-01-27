@@ -11,6 +11,7 @@ namespace What_Should_I_Do
             InitializeComponent();
 
             MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
