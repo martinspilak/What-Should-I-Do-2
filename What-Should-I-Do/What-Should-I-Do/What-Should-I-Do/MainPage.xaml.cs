@@ -15,5 +15,10 @@ namespace What_Should_I_Do
         {
             InitializeComponent();
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new AddItemPage());
+        }
     }
 }
