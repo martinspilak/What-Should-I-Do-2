@@ -5,17 +5,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.AddItemPage">
-    <StackLayout>
+<NavigationPage.TitleView>    
+            <Label Text="What should I do "
+               HorizontalOptions="Center"
+               Margin="0, 0, 56, 0"
+               FontAttributes="Bold"
+               TextColor="White"
+               FontSize="25"/>
+    </NavigationPage.TitleView>
+        <StackLayout>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2"/>
-                <RowDefinition Height="3"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Entry Grid.Row="2" Text="Title" Opacity="0.5" HorizontalOptions="Fill" FontSize="Large" TextColor="Gray"/>
-            <Entry Grid.Row="3" Text="Priority: 1-9" Opacity="0.5" TextColor="Gray" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
+            <Entry Grid.Row="1" Placeholder="Name" HorizontalOptions="Fill" FontSize="Large"/>
+            <Entry Grid.Row="2" Placeholder="Priority 1-9" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
+            <Entry Grid.Row="3" Placeholder="Time to complete (minute)" Keyboard="Numeric" MaxLength="3" HorizontalOptions="Fill"/>
         </Grid>
     </StackLayout>
 </ContentPage>
