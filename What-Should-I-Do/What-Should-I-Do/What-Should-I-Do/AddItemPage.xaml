@@ -5,11 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.AddItemPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="3"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Row="2" Text="Title" Opacity="0.5" HorizontalOptions="Fill" FontSize="Large" TextColor="Gray"/>
+            <Entry Grid.Row="3" Text="Priority: 1-9" Opacity="0.5" TextColor="Gray" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
+        </Grid>
+    </StackLayout>
 </ContentPage>

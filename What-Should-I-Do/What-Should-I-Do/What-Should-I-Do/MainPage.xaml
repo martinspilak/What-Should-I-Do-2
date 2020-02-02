@@ -12,23 +12,12 @@
                TextColor="White"
                FontSize="25"/>
     </NavigationPage.TitleView>
-    
-<<<<<<< HEAD
-   
+
     <AbsoluteLayout>
         <Button AbsoluteLayout.LayoutBounds="280, 480, 60, 60"
                 CornerRadius="30"
-                BackgroundColor="Blue"/>            
-    </AbsoluteLayout>
-    
-=======
-    <StackLayout>
-        <Button Text="New page"
-              HorizontalOptions="Center"
-              VerticalOptions="Center"
-              Clicked="Handle_Clicked" 
-                />
-    </StackLayout>
->>>>>>> 0feeeb05995070251aa6cdde4bd311ee5dfe29ec
+                BackgroundColor="#2196F3"
+                Clicked="Handle_Clicked"/>
+        </AbsoluteLayout>
 
 </ContentPage>
