@@ -13,8 +13,12 @@
                FontSize="25"/>
     </NavigationPage.TitleView>
     
-    <StackLayout>
-      
-    </StackLayout>
+   
+    <AbsoluteLayout>
+        <Button AbsoluteLayout.LayoutBounds="280, 480, 60, 60"
+                CornerRadius="30"
+                BackgroundColor="Blue"/>            
+    </AbsoluteLayout>
+    
 
 </ContentPage>
