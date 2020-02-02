@@ -14,7 +14,11 @@
     </NavigationPage.TitleView>
     
     <StackLayout>
-      
+        <Button Text="New page"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              Clicked="Handle_Clicked" 
+                />
     </StackLayout>
 
 </ContentPage>
