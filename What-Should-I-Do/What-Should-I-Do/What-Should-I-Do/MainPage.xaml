@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:What_Should_I_Do"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.MainPage">
     <NavigationPage.TitleView>
@@ -12,16 +13,29 @@
                TextColor="White"
                FontSize="25"/>
     </NavigationPage.TitleView>
+    
+    <ContentPage.BindingContext>
+        <local:ReminderListViewModel/>
+    </ContentPage.BindingContext>
 
-     
-        <AbsoluteLayout>
-            <Button 
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvReminders" ItemsSource="{Binding Reminders}"  HasUnevenRows="True">
+                
+            </ListView>
+            
+            <AbsoluteLayout>
+                <Button 
                 AbsoluteLayout.LayoutBounds = " 0.95,0.95,60,60 " 
                 AbsoluteLayout.LayoutFlags = " PositionProportional "
                 CornerRadius="30"
                 BackgroundColor="#2196F3"
-                Clicked="Handle_Clicked" />            
-        </AbsoluteLayout>
-    
+                Clicked="Handle_Clicked" />
+            </AbsoluteLayout>
+        
+        </StackLayout>
+    </ContentPage.Content>
 
+    
 </ContentPage>
+

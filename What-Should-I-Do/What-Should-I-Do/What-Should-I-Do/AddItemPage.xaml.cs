@@ -9,12 +9,16 @@ using Xamarin.Forms.Xaml;
 
 namespace What_Should_I_Do
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class AddItemPage : ContentPage
-{
-    public AddItemPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddItemPage : ContentPage
     {
-        InitializeComponent();
+        public AddItemPage()
+        {
+            InitializeComponent();
+        }
+        void Button_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
+        }
     }
-}
 }

@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:What_Should_I_Do"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.AddItemPage">
-<NavigationPage.TitleView>    
+    <ContentPage.BindingContext>
+        <local:ReminderListViewModel/>
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>    
             <Label Text="What should I do "
                HorizontalOptions="Center"
                Margin="0, 0, 56, 0"
@@ -20,13 +24,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Entry Grid.Row="1" Placeholder="Name" HorizontalOptions="Fill" FontSize="Large"/>
-            <Entry Grid.Row="2" Placeholder="Priority 1-9" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
-            <Entry Grid.Row="3" Placeholder="Time to complete (minute)" Keyboard="Numeric" MaxLength="3" HorizontalOptions="Fill"/>
+                    <Entry Text="{Binding ReminderName}" Grid.Row="1" Placeholder="Name" HorizontalOptions="Fill" FontSize="Large"/>
+                    <Entry Text="{Binding Priority}" Grid.Row="2" Placeholder="Priority 1-9" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
+                    <Entry Text="{Binding CompleteTime}" Grid.Row="3" Placeholder="Time to complete (minute)" Keyboard="Numeric" MaxLength="3" HorizontalOptions="Fill"/>
+                    <Button Clicked="Button_Clicked" Command="{Binding AddReminderCommand}" Grid.Row="4" Text="Add"/>
         </Grid>
     </StackLayout>
 </ContentPage>
