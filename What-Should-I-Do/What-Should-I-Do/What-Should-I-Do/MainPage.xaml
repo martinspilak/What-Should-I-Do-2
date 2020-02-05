@@ -32,7 +32,7 @@
                 CornerRadius="30"
                 BackgroundColor="#2196F3"
                 Clicked="Handle_Clicked" 
-                ImageSource="ic_add.png"/>
+                ImageSource="icon_add.png"/>
        </AbsoluteLayout>
                        
     </ContentPage.Content>
