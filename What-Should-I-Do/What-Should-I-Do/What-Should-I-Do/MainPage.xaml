@@ -19,21 +19,22 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
+       <AbsoluteLayout >
         <StackLayout>
             <ListView x:Name="lvReminders" ItemsSource="{Binding Reminders}"  HasUnevenRows="True">
                 
             </ListView>
             
-            <AbsoluteLayout>
+         </StackLayout>
                 <Button 
                 AbsoluteLayout.LayoutBounds = " 0.95,0.95,60,60 " 
                 AbsoluteLayout.LayoutFlags = " PositionProportional "
                 CornerRadius="30"
                 BackgroundColor="#2196F3"
-                Clicked="Handle_Clicked" />
-            </AbsoluteLayout>
-        
-        </StackLayout>
+                Clicked="Handle_Clicked" 
+                ImageSource="ic_add.png"/>
+       </AbsoluteLayout>
+                       
     </ContentPage.Content>
 
     
