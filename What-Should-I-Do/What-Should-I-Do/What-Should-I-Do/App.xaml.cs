@@ -1,28 +1,30 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.IO;
+using What_Should_I_Do.Database;
+using What_Should_I_Do.Models;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace What_Should_I_Do
 {
-    public partial class App : Application
+    public partial class App
     {
+        public static ReminderDatabase Database { get; private set; }
+
+        // store replacement
+        public static ObservableCollection<Reminder> Reminders { get; private set; }
+
         public App()
         {
+            var localFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var dbPath = Path.Combine(localFolder, "Notes.db3");
+            Database = new ReminderDatabase(dbPath);
+
+            var loadedReminders = Database.GetNotesAsync().Result;
+            Reminders = new ObservableCollection<Reminder>(loadedReminders);
+
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage());
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }

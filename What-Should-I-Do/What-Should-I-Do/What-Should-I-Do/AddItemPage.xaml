@@ -3,36 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:What_Should_I_Do"
+             xmlns:vm="clr-namespace:What_Should_I_Do.ViewModels"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.AddItemPage">
+
     <ContentPage.BindingContext>
-        <local:ReminderListViewModel/>
+        <vm:AddItemViewModel/>
     </ContentPage.BindingContext>
-    <NavigationPage.TitleView>    
-            <Label Text="What should I do "
+
+    <NavigationPage.TitleView>
+        <Label Text="What should I do "
                HorizontalOptions="Center"
                Margin="0, 0, 56, 0"
                FontAttributes="Bold"
                TextColor="White"
                FontSize="25"/>
     </NavigationPage.TitleView>
-        <StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-                    <Entry Text="{Binding ReminderName}" Grid.Row="1" Placeholder="Name" HorizontalOptions="Fill" FontSize="Large"/>
-                    <Entry Text="{Binding Priority}" Grid.Row="2" Placeholder="Priority 1-9" Keyboard="Numeric" MaxLength="1" HorizontalOptions="Fill"/>
-                    <Entry Text="{Binding CompleteTime}" Grid.Row="3" Placeholder="Time to complete (minute)" Keyboard="Numeric" MaxLength="3" HorizontalOptions="Fill"/>
-                    <Button Clicked="Button_Clicked" Command="{Binding AddReminderCommand}" Grid.Row="4" Text="Add"/>
-        </Grid>
-    </StackLayout>
+
+    <Grid Padding="10" ColumnSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="1"
+               Text="Meno:"
+               FontSize="20"
+               VerticalOptions="Center"/>
+
+        <Entry Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Text="{Binding Reminder.Name}"/>
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Text="Priority:"
+               FontSize="20"
+               VerticalOptions="Center"/>
+
+        <Slider Grid.Row="2"
+                Grid.Column="1"
+                Maximum="9"
+                Value="{Binding Reminder.Priority}"/>
+
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Text="{Binding Reminder.Priority}"/>
+
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Text="Add"
+                Command="{Binding AddCommand}"/>
+    </Grid>
 </ContentPage>

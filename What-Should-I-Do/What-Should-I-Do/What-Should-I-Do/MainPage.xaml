@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:What_Should_I_Do"
+             xmlns:m="clr-namespace:What_Should_I_Do.Models"
+             xmlns:vm="clr-namespace:What_Should_I_Do.ViewModels"
              mc:Ignorable="d"
-             x:Class="What_Should_I_Do.MainPage">
+             x:Class="What_Should_I_Do.MainPage"
+             BackgroundColor="#F0F0F0">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
     <NavigationPage.TitleView>
         <Label Text="What should I do "
                HorizontalOptions="Center"
@@ -13,28 +20,52 @@
                TextColor="White"
                FontSize="25"/>
     </NavigationPage.TitleView>
-    
-    <ContentPage.BindingContext>
-        <local:ReminderListViewModel/>
-    </ContentPage.BindingContext>
 
     <ContentPage.Content>
-       <AbsoluteLayout >
-        <StackLayout>
-            <ListView x:Name="lvReminders" ItemsSource="{Binding Reminders}"  HasUnevenRows="True">
-                
-            </ListView>
+        <AbsoluteLayout>
+            <CollectionView Margin="5"
+                            ItemsSource="{Binding Reminders}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5"
+                                       Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Reminder">
+                        <StackLayout Padding="6">
+                            <Frame HasShadow="True"
+                                   CornerRadius="10">
+                                <StackLayout>
+                                    <Label FontSize="20"
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold"/>
+
+                                    <BoxView HeightRequest="2"
+                                         BackgroundColor="LightGray"/>
+
+                                    <Label FontSize="14">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Priority: "/>
+                                                <Span Text="{Binding Priority}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             
-        </StackLayout>
-                <Button 
+            <Button 
                 AbsoluteLayout.LayoutBounds = " 0.95,0.95,60,60 " 
                 AbsoluteLayout.LayoutFlags = " PositionProportional "
                 CornerRadius="30"
                 BackgroundColor="#2196F3"
-                Clicked="Handle_Clicked" 
-                ImageSource="icon_add.png"/>
-       </AbsoluteLayout>
-                       
+                ImageSource="icon_add.png"
+                Command="{Binding AddCommand}"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
 
