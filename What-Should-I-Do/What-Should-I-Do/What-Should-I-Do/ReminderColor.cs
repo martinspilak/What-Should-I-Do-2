@@ -7,7 +7,7 @@ namespace What_Should_I_Do
 {
     public class ReminderColor 
     {
-        static Color[] colors = { Color.Red, Color.Green};
+        public static Color[] colors = { Color.Red, Color.Green};
         public static Color GetRandomColor()
         {
             var random = new Random();

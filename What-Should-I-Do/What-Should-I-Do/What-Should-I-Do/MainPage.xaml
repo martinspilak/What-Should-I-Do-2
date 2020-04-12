@@ -35,7 +35,8 @@
                         <StackLayout Padding="6">
                             <Frame HasShadow="True"
                                    CornerRadius="10"
-                                   BackgroundColor="{Binding }">
+                                   BorderColor="Black"
+                                   BackgroundColor=" #DCF5FD ">
                                 <StackLayout>
                                     <Label FontSize="20"
                                        Text="{Binding Name}"
