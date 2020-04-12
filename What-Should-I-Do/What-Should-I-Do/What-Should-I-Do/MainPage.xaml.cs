@@ -1,8 +1,11 @@
-﻿namespace What_Should_I_Do
+﻿
+namespace What_Should_I_Do
 {
     public partial class MainPage
     {
-        public MainPage() => 
+        public MainPage()
+        {
             InitializeComponent();
+        }    
     }
 }

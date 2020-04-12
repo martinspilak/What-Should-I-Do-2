@@ -22,11 +22,11 @@
 
     <Grid Padding="10" ColumnSpacing="15">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -36,12 +36,12 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         
-        <Label Grid.Row="1"
+        <Label Grid.Row="0"
                Text="Meno:"
                FontSize="20"
                VerticalOptions="Center"/>
 
-        <Entry Grid.Row="1"
+        <Entry Grid.Row="0"
                Grid.Column="1"
                Grid.ColumnSpan="2"
                Text="{Binding Reminder.Name}"/>
@@ -56,16 +56,30 @@
         <Slider Grid.Row="2"
                 Grid.Column="1"
                 Maximum="9"
+                ValueChanged="Slider_ValueChanged"
                 Value="{Binding Reminder.Priority}"/>
 
         <Label Grid.Row="2"
                Grid.Column="2"
                Text="{Binding Reminder.Priority}"/>
 
-        <Button Grid.Row="5"
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Text="Date:"
+               FontSize="20"
+               VerticalOptions="Center"/>
+
+        <DatePicker x:Name="date"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Format="D"
+                    DateSelected="DatePicker_DateSelected"/>
+
+        <Button Grid.Row="4"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Text="Add"
                 Command="{Binding AddCommand}"/>
+                
     </Grid>
 </ContentPage>

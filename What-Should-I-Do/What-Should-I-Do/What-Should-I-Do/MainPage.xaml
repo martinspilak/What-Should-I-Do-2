@@ -34,7 +34,8 @@
                     <DataTemplate x:DataType="m:Reminder">
                         <StackLayout Padding="6">
                             <Frame HasShadow="True"
-                                   CornerRadius="10">
+                                   CornerRadius="10"
+                                   BackgroundColor="{Binding }">
                                 <StackLayout>
                                     <Label FontSize="20"
                                        Text="{Binding Name}"
