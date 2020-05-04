@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "What-Should-I-Do.Android", "What-Should-I-Do\What-Should-I-Do.Android\What-Should-I-Do.Android.csproj", "{4306748B-5093-4DAC-BC52-8743AE70529E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "What-Should-I-Do", "What-Should-I-Do\What-Should-I-Do\What-Should-I-Do.csproj", "{58BDE1B9-CD86-45A8-9221-5934E21E1C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "What-Should-I-Do", "What-Should-I-Do\What-Should-I-Do\What-Should-I-Do.csproj", "{58BDE1B9-CD86-45A8-9221-5934E21E1C74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,9 @@ Global
 		{4306748B-5093-4DAC-BC52-8743AE70529E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4306748B-5093-4DAC-BC52-8743AE70529E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4306748B-5093-4DAC-BC52-8743AE70529E}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Debug|Any CPU.Deploy.0 = Release|Any CPU
 		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58BDE1B9-CD86-45A8-9221-5934E21E1C74}.Release|Any CPU.Deploy.0 = Release|Any CPU
