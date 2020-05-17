@@ -5,9 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:m="clr-namespace:What_Should_I_Do.Models"
              xmlns:vm="clr-namespace:What_Should_I_Do.ViewModels"
+             xmlns:local="clr-namespace:What_Should_I_Do"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.MainPage"
-             BackgroundColor="#F0F0F0">
+             BackgroundColor="#F0F0F0"
+             x:Name="Root">
 
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
@@ -36,7 +38,12 @@
                             <Frame HasShadow="True"
                                    CornerRadius="10"
                                    BorderColor="Black"
-                                   BackgroundColor=" #DCF5FD ">
+                                   BackgroundColor="{x:Static local:ReminderColor.RandomColor}">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference Root}, Path=BindingContext.DeleteCommand}"
+                                                          CommandParameter="{Binding}"
+                                                          NumberOfTapsRequired="2"/>
+                                </Frame.GestureRecognizers>
                                 <StackLayout>
                                     <Label FontSize="20"
                                        Text="{Binding Name}"
@@ -50,6 +57,15 @@
                                             <FormattedString>
                                                 <Span Text="Priority: "/>
                                                 <Span Text="{Binding Priority}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label FontSize="14">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Date: "/>
+                                                <Span Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>

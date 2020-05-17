@@ -56,12 +56,13 @@
         <Slider Grid.Row="2"
                 Grid.Column="1"
                 Maximum="9"
-                ValueChanged="Slider_ValueChanged"
+                ValueChanged="OnPriorityChanged"
                 Value="{Binding Reminder.Priority}"/>
 
         <Label Grid.Row="2"
                Grid.Column="2"
-               Text="{Binding Reminder.Priority}"/>
+               x:Name="PriorityValueLabel"
+               Text="{Binding Reminder.Priority, Mode=OneTime}"/>
 
         <Label Grid.Row="3"
                Grid.Column="0"
@@ -69,11 +70,10 @@
                FontSize="20"
                VerticalOptions="Center"/>
 
-        <DatePicker x:Name="date"
-                    Grid.Row="3"
+        <DatePicker Grid.Row="3"
                     Grid.Column="1"
                     Format="D"
-                    DateSelected="DatePicker_DateSelected"/>
+                    Date="{Binding Reminder.Date}"/>
 
         <Button Grid.Row="4"
                 Grid.Column="0"
