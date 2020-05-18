@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using What_Should_I_Do.Models;
 using Xamarin.Forms;
 
@@ -11,7 +12,11 @@ namespace What_Should_I_Do.ViewModels
 
         public AddItemViewModel()
         {
-            Reminder = new Reminder();
+            Reminder = new Reminder
+            {
+                Date = DateTime.Now
+            };
+
             AddCommand = new Command(HandleAdd);
         }
 

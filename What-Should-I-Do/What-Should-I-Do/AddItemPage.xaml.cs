@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace What_Should_I_Do
 {
@@ -11,14 +9,9 @@ namespace What_Should_I_Do
             InitializeComponent();
         }
 
-        private void Slider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+        private void OnPriorityChanged(object sender, ValueChangedEventArgs e)
         {
-            
-        }
-
-        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
-        {
-
+            PriorityValueLabel.Text = ((int) e.NewValue).ToString();
         }
     }
 }
