@@ -16,6 +16,7 @@ namespace What_Should_I_Do
 
         public App()
         {
+            Device.SetFlags(new string[] { "SwipeView_Experimental" });
             var localFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             var dbPath = Path.Combine(localFolder, "Notes.db3");
             Database = new ReminderDatabase(dbPath);

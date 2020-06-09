@@ -8,22 +8,23 @@
              xmlns:local="clr-namespace:What_Should_I_Do"
              mc:Ignorable="d"
              x:Class="What_Should_I_Do.MainPage"
-             BackgroundColor="#F0F0F0"
+             BackgroundColor="Black"
              x:Name="Root">
 
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
-    
+
     <NavigationPage.TitleView>
         <Label Text="What should I do "
                HorizontalOptions="Center"
                FontAttributes="Bold"
-               TextColor="White"
+               TextColor="Black"               
                FontSize="25"/>
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView >
 
     <ContentPage.Content>
+        
         <AbsoluteLayout>
             <CollectionView Margin="5"
                             ItemsSource="{Binding Reminders}">
@@ -37,8 +38,8 @@
                         <StackLayout Padding="6">
                             <Frame HasShadow="True"
                                    CornerRadius="10"
-                                   BorderColor="Black"
-                                   BackgroundColor="{x:Static local:ReminderColor.RandomColor}">
+                                   BorderColor="{x:Static local:ReminderColor.RandomColor}"
+                                   BackgroundColor="white">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={x:Reference Root}, Path=BindingContext.DeleteCommand}"
                                                           CommandParameter="{Binding}"
@@ -47,16 +48,18 @@
                                 <StackLayout>
                                     <Label FontSize="20"
                                        Text="{Binding Name}"
-                                       FontAttributes="Bold"/>
+                                       FontAttributes="Bold"
+                                           TextColor="{x:Static local:ReminderColor.RandomColor}"/>
 
                                     <BoxView HeightRequest="2"
-                                         BackgroundColor="LightGray"/>
+                                         BackgroundColor="{x:Static local:ReminderColor.RandomColor}"/>
 
                                     <Label FontSize="14">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Priority: "/>
-                                                <Span Text="{Binding Priority}"/>
+                                                <Span Text="Priority: "
+                                                      TextColor="{x:Static local:ReminderColor.RandomColor}"/>
+                                                <Span Text="{Binding Priority}" TextColor="{x:Static local:ReminderColor.RandomColor}"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
@@ -64,8 +67,9 @@
                                     <Label FontSize="14">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Date: "/>
-                                                <Span Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"/>
+                                                <Span Text="Date: "
+                                                      TextColor="{x:Static local:ReminderColor.RandomColor}"/>
+                                                <Span Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}" TextColor="{x:Static local:ReminderColor.RandomColor}"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
@@ -80,9 +84,10 @@
                 AbsoluteLayout.LayoutBounds = " 0.95,0.95,60,60 " 
                 AbsoluteLayout.LayoutFlags = " PositionProportional "
                 CornerRadius="30"
-                BackgroundColor="#2196F3"
-                ImageSource="icon_add.png"
+                BackgroundColor="Orange"
+                ImageSource="icon_plus.png"
                 Command="{Binding AddCommand}"/>
+            
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
